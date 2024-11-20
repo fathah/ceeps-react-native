@@ -4,7 +4,7 @@ import { View, StatusBar } from 'react-native';
 import NavBar from '../components/widgets/NavBar';
 import BroadCast from './broadcast/BroadCast';
 import { SafeAreaView } from 'react-native-safe-area-context';
-import Home from './home/Home';
+import Home from './home';
 import { globalstyle } from '../styles/global';
 
 
@@ -16,10 +16,10 @@ const MainComps = ({ navigation }:{navigation:any}) => {
   const [curTab, setCurTab] = useState(0);
 
   const TABS= [
-    { label: 'Moments', component: <Home navigation={navigation}/>, icon: <View></View> },
-    { label: 'Broadcast', component: <BroadCast/>, icon: <View></View> },
-    { label: 'Whisper', component: <Home navigation={navigation}/>, icon: <View></View> },
-    { label: 'Wall', component: <Home navigation={navigation}/>, icon: <View></View> },
+    { label: 'Moments', component: <Home navigation={navigation}/>, icon: "animation" },
+    { label: 'Broadcast', component: <BroadCast/>, icon: "broadcast" },
+    { label: 'Whisper', component: <Home navigation={navigation}/>, icon: "android-messages" },
+    { label: 'Wall', component: <Home navigation={navigation}/>, icon: "book-open-outline" },
   
     
   ];

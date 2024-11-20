@@ -1,11 +1,10 @@
-import {ReactNode} from 'react';
 import {Text, TouchableOpacity, View} from 'react-native';
 import colors from '../../styles/colors';
-import Icon from 'react-native-vector-icons/FontAwesome5';
+import Icon from 'react-native-vector-icons/MaterialCommunityIcons';
 
 interface SingleTab {
   label: string;
-  icon: ReactNode;
+  icon: string;
 }
 
 const NavBar = ({
@@ -26,13 +25,14 @@ const NavBar = ({
         flexDirection: 'row',
       }}>
       {tabs.map((tab, index) => {
+        const color = current === index ? colors.white : "rgba(255,255,255,0.5)"
         return (
           <TouchableOpacity
             key={index}
             onPress={() => setTab(index)}
             style={{flex: 1, alignItems: 'center', justifyContent: 'center'}}>
-            <Icon name="home" size={30} color={colors.white} />
-            <Text style={{color: colors.white}}>{tab.label}</Text>
+            <Icon name={tab.icon} size={25} color={color} />
+            <Text style={{color: color}}>{tab.label}</Text>
           </TouchableOpacity>
         );
       })}
