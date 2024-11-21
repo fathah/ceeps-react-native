@@ -3,7 +3,8 @@ import postStyle from './style';
 import Icon from 'react-native-vector-icons/MaterialCommunityIcons';
 import colors from '../../../styles/colors';
 
-const SinglePost = ({item}: {item: any}) => {
+const SinglePost = ({ post }: { post: any }) => {
+  const {item} = post;
   const isOdd = item.id % 2 === 1;
   const image = isOdd ? '500/500' : '500/600';
   return (
@@ -36,6 +37,8 @@ const SinglePost = ({item}: {item: any}) => {
     </View>
   );
 };
+
+SinglePost.whyDidYouRender = true;
 
 export default SinglePost;
 

@@ -7,15 +7,28 @@ export const storystyle = StyleSheet.create({
     alignItems: 'center',
     position: 'relative',
   },
-  imageBorder: {
-    borderColor: 'grey',
-    borderWidth: 1,
-
+  myStory: {
+    backgroundColor: '#dfe6e9',
     borderRadius: 50,
     justifyContent: 'center',
     alignItems: 'center',
   },
-  image: {width: 70, height: 70, borderRadius: 50, margin: 4},
+
+
+  imageBorder: {
+    backgroundColor: '#bdc3c7',
+    borderRadius: 50,
+    justifyContent: 'center',
+    alignItems: 'center',
+  },
+  image: {
+    width: 70,
+    height: 70,
+    borderRadius: 50,
+    margin: 3,
+    borderWidth: 3,
+    borderColor: 'white',
+  },
   replyContainer: {
     position: 'absolute',
     bottom: 10,
@@ -30,10 +43,8 @@ export const storystyle = StyleSheet.create({
     top: 0,
     left: 0,
     right: 0,
-
     alignItems: 'center',
     justifyContent: 'space-between',
-
     paddingHorizontal: 20,
     paddingVertical: 20,
     marginBottom: 2,
@@ -54,13 +65,27 @@ export const storystyle = StyleSheet.create({
     borderRadius: 20,
     padding: 10,
   },
-  addIcon:{
-    fontSize: 30,
+  addIcon: {
+    backgroundColor: '#0984e3',
+    borderWidth: 3,
+    borderColor: '#fff',
+    padding: 3,
+    borderRadius: 50,
+    color: '#fff',
+    justifyContent: 'center',
+    fontSize: 20,
     position: 'absolute',
     zIndex: 100,
+    bottom: 15,
+    right: 0,
   },
-  storiesList:{
+  yourStoryText: {
+    color: '#636e72',
+    fontSize: 12,
+    marginTop:3
+  },
+  storiesList: {
     paddingHorizontal: 15,
     paddingBottom: 15,
-  }
+  },
 });

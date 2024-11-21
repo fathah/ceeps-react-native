@@ -3,6 +3,7 @@ import Icon from 'react-native-vector-icons/MaterialCommunityIcons';
 import colors from '../../../styles/colors';
 import { styles } from './style';
 
+
 const Logo = () => {
   return (
     <View style={styles.header}>

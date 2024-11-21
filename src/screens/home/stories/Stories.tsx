@@ -1,46 +1,63 @@
-import {Image, ImageBackground, ScrollView, Text, TouchableOpacity, View} from 'react-native';
+import {
+  Image,
+  ImageBackground,
+  ScrollView,
+  Text,
+  TouchableOpacity,
+  View,
+} from 'react-native';
 import {STORIES} from '../../../../data/stories';
-import { storystyle } from './styles';
-import { FlatList } from 'react-native-gesture-handler';
+import {storystyle} from './styles';
+import {FlatList} from 'react-native-gesture-handler';
 import SingleStory from './SingleStory';
 import colors from '../../../styles/colors';
 import Icon from 'react-native-vector-icons/MaterialCommunityIcons';
+import { useDispatch, useSelector } from 'react-redux';
 
-const Stories = ({navigation}:{navigation:any}) => {
+const Stories = ({navigation}: {navigation: any}) => {
+  const listHeader = () => <MyStory />;
+  const renderItem = (item: any) => (
+    <SingleStory navigation={navigation} story={item} />
+  );
+
+  
+  const stories = useSelector((state:any) => state.stories);
+
+
   return (
     <View>
       <FlatList
-        data={STORIES}
-        ListHeaderComponent={() => <StoryHeader/> }
+        data={stories}
+        ListHeaderComponent={listHeader}
         keyExtractor={(_, index) => index.toString()}
-        renderItem={(item) => <SingleStory navigation={navigation} story={item}/> }
+        renderItem={renderItem}
         horizontal
-        style={storystyle.storiesList}>
-        
-
-       
-      </FlatList>
+        style={storystyle.storiesList}></FlatList>
     </View>
   );
 };
 
 export default Stories;
 
+const MyStory = () => {
+  return (
+    <View style={storystyle.storyParent}>
+      <View style={storystyle.myStory}>
+        <Image
+          source={{uri: `https://picsum.photos/200/300`}}
+         
+          style={storystyle.image}
+        />
+        
+      </View>
+      <Icon
+          name={'plus'}
+          size={25}
+          color={colors.black}
+          style={storystyle.addIcon}
+        />
 
-const StoryHeader = () => {
-  return <View style={storystyle.storyParent}>
-    <View style={storystyle.imageBorder}>
-      <Image
-        source={{ uri: `https://picsum.photos/200/300` }}
-        blurRadius={3}
-        style={storystyle.image}
-      />
-      <Icon name={"plus"} size={25} color={colors.black}
-        style={storystyle.addIcon} />
-    
-    
+      <Text style={storystyle.yourStoryText}>Your Story</Text>
     </View>
-
-    <Text>You</Text>
-  </View>;
-}
+  );
+};
