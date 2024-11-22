@@ -1,21 +1,20 @@
 import {
+
   Image,
-  ImageBackground,
-  ScrollView,
   Text,
-  TouchableOpacity,
   View,
 } from 'react-native';
-import {STORIES} from '../../../../data/stories';
 import {storystyle} from './styles';
 import {FlatList} from 'react-native-gesture-handler';
 import SingleStory from './SingleStory';
-import colors from '../../../styles/colors';
 import Icon from 'react-native-vector-icons/MaterialCommunityIcons';
-import { useDispatch, useSelector } from 'react-redux';
+import {  useSelector } from 'react-redux';
+import colors from '@/styles/colors';
 
 const Stories = ({navigation}: {navigation: any}) => {
+  
   const listHeader = () => <MyStory />;
+  
   const renderItem = (item: any) => (
     <SingleStory navigation={navigation} story={item} />
   );
@@ -24,8 +23,7 @@ const Stories = ({navigation}: {navigation: any}) => {
   const stories = useSelector((state:any) => state.stories);
 
 
-  return (
-    <View>
+  return (<View style={{flex: 1}}>
       <FlatList
         data={stories}
         ListHeaderComponent={listHeader}
@@ -44,7 +42,7 @@ const MyStory = () => {
     <View style={storystyle.storyParent}>
       <View style={storystyle.myStory}>
         <Image
-          source={{uri: `https://picsum.photos/200/300`}}
+          source={{uri: `https://picsum.photos/id/786/200/300`}}
          
           style={storystyle.image}
         />

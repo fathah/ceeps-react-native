@@ -1,14 +1,11 @@
 import 'react-native-gesture-handler'; // Import at the very top
 import React, { useState } from 'react';
 import { View, StatusBar } from 'react-native';
-import NavBar from '../components/widgets/NavBar';
-import BroadCast from './broadcast/BroadCast';
 import { SafeAreaView } from 'react-native-safe-area-context';
 import Home from './home';
-import { globalstyle } from '../styles/global';
-
-
-
+import BroadCast from './broadcast';
+import { globalstyle } from '@/styles/global';
+import NavBar from '@/components/widgets/NavBar';
 
 
 const MainComps = ({ navigation }:{navigation:any}) => {

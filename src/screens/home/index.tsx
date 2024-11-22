@@ -1,23 +1,22 @@
-import {View, ScrollView, Animated, Alert, FlatList, Text} from 'react-native';
+import {View,  FlatList} from 'react-native';
 import Logo from './header/Logo';
-import Stories from './stories/Stories';
-import FloatingButton from './addMoment/FloatingButton';
-import {globalstyle} from '../../styles/global';
 import {useCallback, useRef, useState} from 'react';
 import {RefreshControl} from 'react-native-gesture-handler';
 import Toast from 'react-native-toast-message';
 import SinglePost from './posts/SinglePost';
-import POSTS from '../../../data/posts';
+import { useSelector } from 'react-redux';
+import Stories from './stories/Stories';
+import { globalstyle } from '@/styles/global';
 
 const Home = ({navigation}: {navigation: any}) => {
   const [refreshing, setRefreshing] = useState(false);
 
   const renderItem = useCallback((item: any) => <SinglePost post={item} />, []);
 
-  const ListHeader = () => (
-    <View>
-      <Logo /> <Stories navigation={navigation} />
-    </View>
+  const ListHeader = () => (<View>
+    <Logo />
+    <Stories navigation={navigation} />
+  </View>
   );
 
   function handelRefresh() {
@@ -38,11 +37,14 @@ const Home = ({navigation}: {navigation: any}) => {
     />
   );
 
+  const posts =  useSelector((state:any) => state.posts);
+
+
+  
   return (
-    <View style={globalstyle.relative}>
+    <View style={globalstyle.flex}>
       <FlatList
-        data={POSTS}
-        windowSize={5}
+        data={posts}
         ListHeaderComponent={ListHeader}
         renderItem={renderItem}
         keyExtractor={(_, index) => index.toString()}
