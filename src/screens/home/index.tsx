@@ -1,14 +1,23 @@
 import {View, FlatList} from 'react-native';
 import Logo from './header/Logo';
-import {useCallback, useRef, useState} from 'react';
+import {FC, useCallback, useRef, useState} from 'react';
 import {RefreshControl} from 'react-native-gesture-handler';
 import Toast from 'react-native-toast-message';
 import SinglePost from './posts/SinglePost';
 import {useSelector} from 'react-redux';
-import Stories from './stories/Stories';
+import Stories from './stories';
 import {globalstyle} from '@/styles/global';
+import { BottomTabScreenProps } from '@react-navigation/bottom-tabs';
+import { TabParamList } from '@/types/routeParams';
+import { Tabs } from '@/types/screens';
 
-const Home = ({navigation}: {navigation: any}) => {
+export type HomePageNavProps = BottomTabScreenProps<TabParamList, Tabs.HOME>;
+
+export type HomePageProps = {
+  navigation: HomePageNavProps;
+};
+
+const Home: FC<HomePageProps> = ({navigation}) => {
   const [refreshing, setRefreshing] = useState(false);
   const posts = useSelector((state: any) => state.posts);
 

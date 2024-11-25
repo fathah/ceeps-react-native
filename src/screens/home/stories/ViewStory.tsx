@@ -7,12 +7,13 @@ import {
 } from 'react-native';
 import {NativeStackScreenProps} from '@react-navigation/native-stack';
 
-import {RootStackParamList} from '../../../types/routeParams';
 import {storystyle} from './styles';
 import Icon from 'react-native-vector-icons/MaterialCommunityIcons';
 import colors from '../../../styles/colors';
+import { StackParamList } from '@/types/routeParams';
+import { Screens } from '@/types/screens';
 
-type ViewStoryProps = NativeStackScreenProps<RootStackParamList, 'StoryView'>;
+type ViewStoryProps = NativeStackScreenProps<StackParamList, Screens.STORY_VIEW_PAGE>;
 
 const ViewStory = ({route, navigation}: ViewStoryProps) => {
   const {username} = route.params;

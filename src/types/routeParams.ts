@@ -1,4 +1,14 @@
-export type RootStackParamList = {
-  Index: undefined; // The Home screen expects no parameters.
-  StoryView: {username: string}; // The StoryView screen expects a `username` parameter of type `string`.
+import {Screens, Tabs} from './screens';
+
+export type StackParamList = {
+  [Screens.TABS]: undefined;
+  [Screens.INDEX_PAGE]: undefined;
+  [Screens.STORY_VIEW_PAGE]: {username: string};
+};
+
+export type TabParamList = {
+  [Tabs.HOME]: undefined;
+  [Tabs.BROADCAST]: undefined;
+  [Tabs.WHISPER]: undefined;
+  [Tabs.WALL]: undefined;
 };
