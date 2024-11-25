@@ -1,7 +1,8 @@
 import { Animated, StyleSheet, TouchableHighlight, View } from "react-native";
-import colors from "../../../styles/colors";
+
 import Icon from 'react-native-vector-icons/MaterialCommunityIcons';
 import addMomentStyles from "./style";
+import colors from "@/styles/colors";
 
 const FloatingButton = ({ buttonAnimation }: { buttonAnimation: Animated.Value }) => {
     const style = [addMomentStyles.buttonParent,
@@ -16,19 +17,7 @@ const FloatingButton = ({ buttonAnimation }: { buttonAnimation: Animated.Value }
         ]
     }];
     return (<Animated.View style={style}>
-        <TouchableHighlight style={{
-            backgroundColor: colors.black,
-            height:60,
-            width: 60,
-            borderRadius: 50,
-            justifyContent: 'center',
-            alignItems: 'center',
-           
-            shadowOffset: { width: 0, height: 2 },
-    shadowRadius: 3,
-            elevation: 5,
-    
-        }}>
+        <TouchableHighlight style={addMomentStyles.button}>
             <Icon name={"comment-plus-outline"} size={25} color={colors.white} />
         </TouchableHighlight></Animated.View>
     );

@@ -13,7 +13,4 @@ export const styles = StyleSheet.create({
     fontSize: 30,
     fontWeight: 'bold',
   },
-  dm: {
-    transform: [{rotate: '-40deg'}],
-  },
 });

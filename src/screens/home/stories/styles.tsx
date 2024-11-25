@@ -1,3 +1,4 @@
+import colors from '@/styles/colors';
 import {StyleSheet} from 'react-native';
 
 export const storystyle = StyleSheet.create({
@@ -13,7 +14,6 @@ export const storystyle = StyleSheet.create({
     justifyContent: 'center',
     alignItems: 'center',
   },
-
 
   imageBorder: {
     backgroundColor: '#bdc3c7',
@@ -60,7 +60,7 @@ export const storystyle = StyleSheet.create({
   },
   replyInput: {
     backgroundColor: 'transparent',
-    borderColor: '#fff',
+    borderColor: colors.white,
     borderWidth: 1,
     borderRadius: 20,
     padding: 10,
@@ -68,10 +68,10 @@ export const storystyle = StyleSheet.create({
   addIcon: {
     backgroundColor: '#0984e3',
     borderWidth: 3,
-    borderColor: '#fff',
+    borderColor: colors.white,
     padding: 2,
     borderRadius: 50,
-    color: '#fff',
+    color: colors.white,
     justifyContent: 'center',
     fontSize: 18,
     position: 'absolute',
@@ -82,7 +82,7 @@ export const storystyle = StyleSheet.create({
   yourStoryText: {
     color: '#636e72',
     fontSize: 12,
-    marginTop:3
+    marginTop: 3,
   },
   storiesList: {
     paddingHorizontal: 15,

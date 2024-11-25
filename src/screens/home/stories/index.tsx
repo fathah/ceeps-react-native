@@ -1,33 +1,39 @@
-import {
-
-  Image,
-  Text,
-  View,
-} from 'react-native';
+import {Image, Text, View} from 'react-native';
 import {storystyle} from './styles';
 import {FlatList} from 'react-native-gesture-handler';
 import SingleStory from './SingleStory';
 import Icon from 'react-native-vector-icons/MaterialCommunityIcons';
-import {  useSelector } from 'react-redux';
+import {useSelector} from 'react-redux';
 import colors from '@/styles/colors';
+import {useCallback, useMemo} from 'react';
 
-const Stories = ({navigation}: {navigation: any}) => {
-  
-  const listHeader = () => <MyStory />;
-  
-  const renderItem = (item: any) => (
-    <SingleStory navigation={navigation} story={item} />
+
+
+type StoriesProps = {
+  navigation: any;
+};
+
+const Stories: React.FC<StoriesProps> = ({ navigation }) => {
+
+  const stories = useSelector((state: any) => state.stories);
+
+  const listHeader = useCallback(() => <MyStory />, []);
+  const renderItem = useCallback(
+    (item: any) => <SingleStory navigation={navigation} story={item} />,
+    [],
   );
 
-  
-  const stories = useSelector((state:any) => state.stories);
+  const keyExtractor = useMemo(
+    () => (item: any, index: number) => index.toString(),
+    [],
+  );
 
-
-  return (<View style={{flex: 1}}>
+  return (
+    <View style={{flex: 1}}>
       <FlatList
         data={stories}
         ListHeaderComponent={listHeader}
-        keyExtractor={(_, index) => index.toString()}
+        keyExtractor={keyExtractor}
         renderItem={renderItem}
         horizontal
         style={storystyle.storiesList}></FlatList>
@@ -43,17 +49,15 @@ const MyStory = () => {
       <View style={storystyle.myStory}>
         <Image
           source={{uri: `https://picsum.photos/id/786/200/300`}}
-         
           style={storystyle.image}
         />
-        
       </View>
       <Icon
-          name={'plus'}
-          size={25}
-          color={colors.black}
-          style={storystyle.addIcon}
-        />
+        name={'plus'}
+        size={25}
+        color={colors.black}
+        style={storystyle.addIcon}
+      />
 
       <Text style={storystyle.yourStoryText}>Your Story</Text>
     </View>

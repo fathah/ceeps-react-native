@@ -1,3 +1,4 @@
+import colors from '@/styles/colors';
 import {StyleSheet} from 'react-native';
 
 export const broadcastStyle = StyleSheet.create({
@@ -5,7 +6,7 @@ export const broadcastStyle = StyleSheet.create({
     flexDirection: 'row',
     gap: 8,
     backgroundColor: '#000',
-    color: '#fff',
+    color: colors.white,
     alignItems: 'center',
     justifyContent: 'center',
     paddingVertical: 20,
@@ -13,6 +14,6 @@ export const broadcastStyle = StyleSheet.create({
   text: {
     fontSize: 20,
     fontWeight: 'bold',
-    color: '#fff',
+    color: colors.white,
   },
 });

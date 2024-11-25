@@ -9,7 +9,7 @@ const Logo = () => {
     <View style={styles.header}>
           <Text style={styles.logo}>Ceebs</Text>
           <View>
-        <Icon name={"send-circle"} size={45} style={styles.dm} color={colors.black} />
+        <Icon name={"account-circle"} size={40} color={colors.black} />
           </View>
     </View>
   );
