@@ -29,7 +29,7 @@ const WallIndex: FC<WallPageProps> = (): JSX.Element => {
   );
 
   useEffect(() => {
-    dispatch(fetchImages({query: 'nature', count: 10}));
+    dispatch(fetchImages({query: 'cars', count: 10}));
   }, [dispatch]);
 
   const imageSize = screenWidth / columns - 10;

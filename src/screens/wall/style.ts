@@ -10,7 +10,7 @@ export const wallStyle = StyleSheet.create({
     alignItems: 'center',
     justifyContent: 'space-between',
     paddingHorizontal: 20,
-    paddingVertical: 20,
+    paddingVertical: 10,
   },
   logo: {
     flexDirection: 'row',

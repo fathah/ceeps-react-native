@@ -64,7 +64,7 @@ const whisperTabOptions: BottomTabNavigationOptions = {
 const wallTabOptions: BottomTabNavigationOptions = {
   tabBarIcon: props => (
     <MaterialIcon
-      icon="book-open-outline"
+      icon="aspect-ratio"
       color={props.focused ? colors.white : colors.black}
     />
   ),
