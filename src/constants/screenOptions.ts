@@ -1,4 +1,3 @@
-import colors from '@/styles/colors';
 import {BottomTabNavigationOptions} from '@react-navigation/bottom-tabs';
 import {StackNavigationOptions} from '@react-navigation/stack';
 import {COLOR_THEME} from './colors';
@@ -26,4 +25,11 @@ export const UNSELECTED_TAB_STYLES = {
   flex: 1,
   borderRadius: size.xl3,
   margin: 5,
+};
+
+export const ScreenAsModalOptions: StackNavigationOptions = {
+  presentation: 'transparentModal',
+  animation: 'slide_from_bottom',
+  gestureDirection: 'vertical',
+  gestureEnabled: true,
 };

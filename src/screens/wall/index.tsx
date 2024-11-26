@@ -1,4 +1,4 @@
-import {Text, View} from 'react-native';
+import {Text} from 'react-native';
 import {SafeAreaView} from 'react-native-safe-area-context';
 import WallHeader from './components/WallHeader';
 import {BottomTabScreenProps} from '@react-navigation/bottom-tabs';
@@ -14,7 +14,7 @@ type WallPageProps = {
 };
 
 
-const WallIndex: FC<WallPageProps> = ({navigation}): JSX.Element => {
+const WallIndex: FC<WallPageProps> = (): JSX.Element => {
   return (
     <SafeAreaView>
       <WallHeader />

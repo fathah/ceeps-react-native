@@ -4,8 +4,9 @@ import {Screens} from '../types/screens';
 import ViewStory from '../screens/home/stories/ViewStory';
 import { StackParamList } from '@/types/routeParams';
 import TabNavigator from './TabNavigator';
-import { AppStackScreenOptions } from '@/constants/screenOptions';
+import { AppStackScreenOptions, ScreenAsModalOptions } from '@/constants/screenOptions';
 import Home from '@/screens/home';
+import AddBroadCast from '@/screens/broadcast/addBroadcast';
 
 const Stack = createStackNavigator<StackParamList>();
 
@@ -24,6 +25,12 @@ const StackNavigator = () => {
         <Stack.Screen
           name={Screens.STORY_VIEW_PAGE}
           component={ViewStory}
+        />
+
+<Stack.Screen
+          name={Screens.MODAL}
+          component={AddBroadCast}
+          options={ScreenAsModalOptions}
         />
 
       </Stack.Navigator>

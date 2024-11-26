@@ -58,6 +58,7 @@ export const storystyle = StyleSheet.create({
     justifyContent: 'center',
     marginRight: 8,
   },
+  centerAlign:{flexDirection: 'row', alignItems: 'center'},
   replyInput: {
     backgroundColor: 'transparent',
     borderColor: colors.white,

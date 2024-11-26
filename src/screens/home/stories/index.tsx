@@ -6,6 +6,7 @@ import Icon from 'react-native-vector-icons/MaterialCommunityIcons';
 import {useSelector} from 'react-redux';
 import colors from '@/styles/colors';
 import {useCallback, useMemo} from 'react';
+import { globalstyle } from '@/styles/global';
 
 
 
@@ -20,7 +21,7 @@ const Stories: React.FC<StoriesProps> = ({ navigation }) => {
   const listHeader = useCallback(() => <MyStory />, []);
   const renderItem = useCallback(
     (item: any) => <SingleStory navigation={navigation} story={item} />,
-    [],
+    [navigation],
   );
 
   const keyExtractor = useMemo(
@@ -29,7 +30,7 @@ const Stories: React.FC<StoriesProps> = ({ navigation }) => {
   );
 
   return (
-    <View style={{flex: 1}}>
+    <View style={globalstyle.flex}>
       <FlatList
         data={stories}
         ListHeaderComponent={listHeader}

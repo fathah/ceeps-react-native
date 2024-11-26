@@ -1,21 +1,20 @@
-import { Modal, Pressable, StyleSheet, Text, View } from "react-native";
+import { Modal, Pressable, StyleSheet, Text, View } from 'react-native';
 
-const Comments = ({visible, onHide}:{visible:boolean, onHide:()=>void}) => {
+const Comments = ({ visible, onHide }: { visible: boolean, onHide: () => void }) => {
+  
     return (
     
             <Modal
           animationType="slide"
           visible={visible}
-          onRequestClose={() => {
-            onHide();
-          }}>
+          onRequestClose={onHide}>
                
           <View style={styles.centeredView}>
             <View style={styles.modalView}>
               <Text style={styles.modalText}>Hello World!</Text>
               <Pressable
                 style={[styles.button, styles.buttonClose]}
-                onPress={() => onHide()}>
+                onPress={onHide}>
                 <Text style={styles.textStyle}>Hide Modal</Text>
               </Pressable>
             </View>

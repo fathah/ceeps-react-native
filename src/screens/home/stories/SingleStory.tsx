@@ -1,4 +1,4 @@
-import {Image, Text, TouchableOpacity, View} from 'react-native';
+import {Image, Text, TouchableOpacity} from 'react-native';
 import {storystyle} from './styles';
 import {useDispatch} from 'react-redux';
 import {markAsViewed} from '../../../redux/slices/storySlices';

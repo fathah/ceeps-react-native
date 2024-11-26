@@ -16,7 +16,7 @@ import {
   BottomTabNavigationOptions,
 } from '@react-navigation/bottom-tabs';
 import {BottomTabBarButtonProps} from 'node_modules/@react-navigation/bottom-tabs/lib/typescript/commonjs/src';
-import {TouchableOpacity, View, Text} from 'react-native';
+import {TouchableOpacity, View} from 'react-native';
 
 const Tab = createBottomTabNavigator<TabParamList>();
 

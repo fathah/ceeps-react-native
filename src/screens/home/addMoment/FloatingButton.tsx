@@ -1,4 +1,4 @@
-import { Animated, StyleSheet, TouchableHighlight, View } from "react-native";
+import { Animated, TouchableHighlight } from "react-native";
 
 import Icon from 'react-native-vector-icons/MaterialCommunityIcons';
 import addMomentStyles from "./style";

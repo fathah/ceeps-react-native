@@ -1,26 +1,27 @@
-import {Image, StyleSheet, Text, TouchableOpacity, View} from 'react-native';
+import {Image, Text, TouchableOpacity, View} from 'react-native';
 import postStyle from './style';
 import Icon from 'react-native-vector-icons/MaterialCommunityIcons';
 import colors from '../../../styles/colors';
-import { useDispatch } from 'react-redux';
-import { markAsLiked } from '@/redux/slices/postSlices';
+import {useDispatch} from 'react-redux';
+import {markAsLiked} from '@/redux/slices/postSlices';
+import {globalstyle} from '@/styles/global';
+import {useCallback} from 'react';
 
-const SinglePost = ({ post }: { post: any }) => {
+const SinglePost = ({post}: {post: any}) => {
   const {item} = post;
   const isOdd = item.id % 2 === 1;
   const image = isOdd ? '500/500' : '500/600';
 
   const dispatch = useDispatch();
 
-  function handleLike() {
+  const handleLike = useCallback(() => {
     dispatch(markAsLiked(item.id));
-  }
+  }, [item.id, dispatch]);
+
   return (
-    <View key={item.id} style={{flex: 1}}>
-      <View
-        style={postStyle.userData}>
-        <View
-          style={postStyle.cicularAvatar}>
+    <View key={item.id} style={globalstyle.flex}>
+      <View style={postStyle.userData}>
+        <View style={postStyle.cicularAvatar}>
           <Text>{item?.username[0]}</Text>
         </View>
         <Text>{item?.username} </Text>
@@ -37,12 +38,14 @@ const SinglePost = ({ post }: { post: any }) => {
 
       <View style={postStyle.postActionButtons}>
         <TouchableOpacity onPress={handleLike}>
-      <Icon name={item.isLiked? 'heart' : 'heart-outline'} size={25} color={colors.black} />
+          <Icon
+            name={item.isLiked ? 'heart' : 'heart-outline'}
+            size={25}
+            color={colors.black}
+          />
         </TouchableOpacity>
 
-
-        
-        <TouchableOpacity onPress={() => {}}>
+        <TouchableOpacity>
           <Icon name={'comment-outline'} size={25} color={colors.black} />
         </TouchableOpacity>
         <Icon name={'send'} size={25} color={colors.black} />
@@ -54,4 +57,3 @@ const SinglePost = ({ post }: { post: any }) => {
 SinglePost.whyDidYouRender = true;
 
 export default SinglePost;
-

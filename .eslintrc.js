@@ -5,5 +5,11 @@ module.exports = {
     "import/resolver": {
       "babel-module": {}
     }
-  }
+  },
+  plugins: ['react', 'react-native'],
+  rules: {
+    'react-native/no-inline-styles': 'error', 
+    'react/jsx-no-bind': 'error' 
+  },
+  
 };

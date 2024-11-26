@@ -32,8 +32,8 @@ const MainComps = ({navigation}: {navigation: any}) => {
   return (
     <SafeAreaView style={globalstyle.scaffold}>
       <StatusBar />
-      <View style={{flex: 1}}>
-        <View style={{flex: 1}}>{TABS[curTab].component}</View>
+      <View style={globalstyle.flex}>
+        <View style={globalstyle.flex}>{TABS[curTab].component}</View>
         <NavBar current={curTab} setTab={setCurTab} tabs={TABS} />
       </View>
     </SafeAreaView>

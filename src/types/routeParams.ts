@@ -4,6 +4,7 @@ export type StackParamList = {
   [Screens.TABS]: undefined;
   [Screens.INDEX_PAGE]: undefined;
   [Screens.STORY_VIEW_PAGE]: {username: string};
+  [Screens.MODAL]: undefined;
 };
 
 export type TabParamList = {
