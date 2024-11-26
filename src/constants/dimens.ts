@@ -1,3 +1,5 @@
+import {Dimensions} from 'react-native';
+
 export const size = {
   xxs: 4,
   xs: 8,
@@ -37,3 +39,5 @@ export const appContainer = {
   smallImageSize: size.md,
   dotSize: size.xs,
 };
+
+export const SCREEN_WIDTH = Dimensions.get('window');

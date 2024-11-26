@@ -8,12 +8,29 @@ export const wallStyle = StyleSheet.create({
     backgroundColor: '#000',
     color: colors.white,
     alignItems: 'center',
-    justifyContent: 'center',
+    justifyContent: 'space-between',
+    paddingHorizontal: 20,
     paddingVertical: 20,
   },
+  logo: {
+    flexDirection: 'row',
+    alignItems: 'center',
+    gap: 8,
+  },
   text: {
-    fontSize: 20,
+    fontSize: 18,
     fontWeight: 'bold',
     color: colors.white,
+  },
+  thumbImage: {
+    width: '100%',
+    resizeMode: 'cover',
+    margin: 5,
+    borderRadius: 12,
+    shadowColor: '#000',
+    shadowOffset: {
+      height: 200,
+      width: 0,
+    },
   },
 });
