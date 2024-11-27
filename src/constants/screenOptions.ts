@@ -2,8 +2,9 @@ import {BottomTabNavigationOptions} from '@react-navigation/bottom-tabs';
 import {StackNavigationOptions} from '@react-navigation/stack';
 import {COLOR_THEME} from './colors';
 import {size} from './dimens';
+import {NativeStackNavigationOptions} from '@react-navigation/native-stack';
 
-export const AppStackScreenOptions: StackNavigationOptions = {
+export const AppStackScreenOptions: NativeStackNavigationOptions = {
   headerShown: false,
   gestureEnabled: false,
 };
@@ -27,7 +28,7 @@ export const UNSELECTED_TAB_STYLES = {
   margin: 5,
 };
 
-export const ScreenAsModalOptions: StackNavigationOptions = {
+export const ScreenAsModalOptions: NativeStackNavigationOptions = {
   presentation: 'transparentModal',
   animation: 'slide_from_bottom',
   gestureDirection: 'vertical',

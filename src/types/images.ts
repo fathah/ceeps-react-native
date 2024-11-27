@@ -9,5 +9,5 @@ export interface PixelImage {
 export type PixelImagePayload = {
   query: string;
   count: number;
-  callback: () => void;
+  callback: (success: boolean, apiResponse: PixelImage[]) => void;
 };

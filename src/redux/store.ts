@@ -14,7 +14,11 @@ export const store = configureStore({
     images: imageSlices,
   },
   middleware: getDefaultMiddleware =>
-    getDefaultMiddleware().concat(sagaMiddleware),
+    getDefaultMiddleware({
+      serializableCheck: {
+        ignoredActionPaths: ['payload.callback'],
+      },
+    }).concat(sagaMiddleware),
 });
 
 sagaMiddleware.run(rootSaga);

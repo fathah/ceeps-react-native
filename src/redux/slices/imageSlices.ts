@@ -1,4 +1,4 @@
-import {PixelImage} from '@/types/images';
+import {PixelImage, PixelImagePayload} from '@/types/images';
 import {createSlice, PayloadAction} from '@reduxjs/toolkit';
 
 type ImageSliceType = {
@@ -19,11 +19,9 @@ const imageSlice = createSlice({
   name: 'images',
   initialState,
   reducers: {
-    fetchImages: (
-      state,
-      action: PayloadAction<{query: string; count: number}>,
-    ) => {
+    getImages: (state, action: PayloadAction<PixelImagePayload>) => {
       state.loading = true;
+      state.error = null;
     },
 
     setImages: (state, action) => {
@@ -43,7 +41,7 @@ const imageSlice = createSlice({
   },
 });
 
-export const {fetchImages, setImages, setLoading, setError, setSelectedImage} =
+export const {getImages, setImages, setLoading, setError, setSelectedImage} =
   imageSlice.actions;
 
 export default imageSlice.reducer;

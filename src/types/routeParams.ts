@@ -1,3 +1,4 @@
+import {PixelImage} from './images';
 import {Screens, Tabs} from './screens';
 
 export type StackParamList = {
@@ -5,6 +6,7 @@ export type StackParamList = {
   [Screens.INDEX_PAGE]: undefined;
   [Screens.STORY_VIEW_PAGE]: {username: string};
   [Screens.MODAL]: undefined;
+  [Screens.IMAGE_DETAIL]: {image: PixelImage};
 };
 
 export type TabParamList = {

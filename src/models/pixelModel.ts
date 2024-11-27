@@ -1,5 +1,6 @@
 import SecretKeys from '@/constants/keys';
 import AxiosService from '@/services/AxiosService';
+import {PixelImage} from '@/types/images';
 
 export default class PixelModel {
   static readonly API_ROOT: string = 'https://api.pexels.com/v1/';
@@ -17,6 +18,9 @@ export default class PixelModel {
             Authorization: SecretKeys.PEXELS_API,
           },
         });
+      if (resp.status !== 200) {
+        throw new Error('API request failed');
+      }
       const images = resp?.data?.photos;
       if (images?.length > 0) {
         return images.map((image: any) => {

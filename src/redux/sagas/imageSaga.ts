@@ -1,17 +1,16 @@
 import PixelModel from '@/models/pixelModel';
 import {PayloadAction} from '@reduxjs/toolkit';
 import {put, takeLatest} from 'redux-saga/effects';
-import {fetchImages, setImages} from '../slices/imageSlices';
+import {getImages, setImages} from '../slices/imageSlices';
 import {PixelImage, PixelImagePayload} from '@/types/images';
 
-function* getImages(action: PayloadAction<PixelImagePayload>) {
-  const {query, count} = action.payload;
-
+function* getPixelImages(action: PayloadAction<PixelImagePayload>) {
+  const {query, count, callback} = action.payload;
   const resp: PixelImage[] = yield PixelModel.searchImages(query, count);
-
+  callback(true, resp);
   yield put(setImages(resp));
 }
 
 export default function* watchimageSaga() {
-  yield takeLatest(fetchImages.type, getImages);
+  yield takeLatest(getImages.type, getPixelImages);
 }

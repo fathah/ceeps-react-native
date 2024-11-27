@@ -40,4 +40,5 @@ export const appContainer = {
   dotSize: size.xs,
 };
 
-export const SCREEN_WIDTH = Dimensions.get('window');
+export const SCREEN_WIDTH = Dimensions.get('window').width;
+export const SCREEN_HEIGHT = Dimensions.get('window').height;

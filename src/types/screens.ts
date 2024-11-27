@@ -3,6 +3,7 @@ export enum Screens {
   INDEX_PAGE = 'Index',
   STORY_VIEW_PAGE = 'StoryView',
   MODAL = 'Modal',
+  IMAGE_DETAIL = 'ImageDetail',
 }
 
 export enum Tabs {

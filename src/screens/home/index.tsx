@@ -1,7 +1,6 @@
 import {View, FlatList} from 'react-native';
 import Logo from './header/Logo';
-import {FC, useCallback, useMemo, useState} from 'react';
-import {RefreshControl} from 'react-native-gesture-handler';
+import {FC, useCallback,  useState} from 'react';
 import Toast from 'react-native-toast-message';
 import SinglePost from './posts/SinglePost';
 import {useSelector} from 'react-redux';
@@ -43,7 +42,6 @@ const Home: FC<HomePageProps> = ({navigation}) => {
     }, 1000);
   }
 
-  const refreshControl = useMemo(()=><RefreshControl refreshing={refreshing} onRefresh={handelRefresh} />, [refreshing]);
 
   return (
     <View style={globalstyle.flex}>
@@ -53,7 +51,7 @@ const Home: FC<HomePageProps> = ({navigation}) => {
         renderItem={renderItem}
         keyExtractor={keyExtractor}
         scrollEventThrottle={16}
-        refreshControl={refreshControl}
+       
       />
     </View>
   );

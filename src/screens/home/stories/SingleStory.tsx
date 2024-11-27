@@ -4,6 +4,7 @@ import {useDispatch} from 'react-redux';
 import {markAsViewed} from '../../../redux/slices/storySlices';
 import LinearGradient from 'react-native-linear-gradient';
 import {useCallback, useMemo} from 'react';
+import { Screens } from '@/types/screens';
 
 const SingleStory = ({
   navigation,
@@ -30,7 +31,7 @@ const SingleStory = ({
   );
 
   const handleViewStory = useCallback(() => {
-    navigation.navigate('StoryView', {username: item.username});
+    navigation.navigate(Screens.STORY_VIEW_PAGE, {username: item.username});
     dispatch(markAsViewed(item.id));
   }, [navigation, dispatch, item.username, item.id]);
 

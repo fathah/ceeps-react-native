@@ -33,4 +33,7 @@ export const wallStyle = StyleSheet.create({
       width: 0,
     },
   },
+  input: {
+    color: colors.white,
+  },
 });

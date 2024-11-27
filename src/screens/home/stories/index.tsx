@@ -1,6 +1,5 @@
-import {Image, Text, View} from 'react-native';
+import {Image, Text, View,FlatList} from 'react-native';
 import {storystyle} from './styles';
-import {FlatList} from 'react-native-gesture-handler';
 import SingleStory from './SingleStory';
 import Icon from 'react-native-vector-icons/MaterialCommunityIcons';
 import {useSelector} from 'react-redux';
