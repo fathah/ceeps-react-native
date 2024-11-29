@@ -23,7 +23,6 @@ const imageSlice = createSlice({
       state.loading = true;
       state.error = null;
     },
-
     setImages: (state, action) => {
       state.images = action.payload;
       state.loading = false;

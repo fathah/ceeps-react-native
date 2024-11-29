@@ -5,8 +5,8 @@ import {getImages, setImages} from '../slices/imageSlices';
 import {PixelImage, PixelImagePayload} from '@/types/images';
 
 function* getPixelImages(action: PayloadAction<PixelImagePayload>) {
-  const {query, count, callback} = action.payload;
-  const resp: PixelImage[] = yield PixelModel.searchImages(query, count);
+  const {query, count, page, callback} = action.payload;
+  const resp: PixelImage[] = yield PixelModel.searchImages(query, count, page);
   callback(true, resp);
   yield put(setImages(resp));
 }

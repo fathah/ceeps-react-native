@@ -8,18 +8,23 @@ export default class PixelModel {
   static async searchImages(
     query: string,
     count: number = 10,
+    page: number = 1,
   ): Promise<PixelImage[]> {
     try {
+      if (query.length < 1) {
+        return [];
+      }
       const axios = AxiosService.getInstance(PixelModel.API_ROOT);
       const resp = await axios
         .getAxiosInstance()
-        .get(`search?query=${query}&per_page=${count}`, {
+        .get(`search?query=${query}&per_page=${count}&page=${page}`, {
           headers: {
             Authorization: SecretKeys.PEXELS_API,
           },
         });
       if (resp.status !== 200) {
-        throw new Error('API request failed');
+        console.error('Failed to load images:', resp);
+        return [];
       }
       const images = resp?.data?.photos;
       if (images?.length > 0) {

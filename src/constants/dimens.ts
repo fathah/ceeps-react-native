@@ -40,5 +40,9 @@ export const appContainer = {
   dotSize: size.xs,
 };
 
-export const SCREEN_WIDTH = Dimensions.get('window').width;
-export const SCREEN_HEIGHT = Dimensions.get('window').height;
+export const SCREEN_WIDTH = () => Dimensions.get('window').width;
+export const SCREEN_HEIGHT = () => Dimensions.get('window').height;
+export const SCREEN_ORIENTATION = () => {
+  const {width, height} = Dimensions.get('window');
+  return width > height ? 'Landscape' : 'Portrait';
+};
