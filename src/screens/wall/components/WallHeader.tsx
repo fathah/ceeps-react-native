@@ -26,7 +26,6 @@ const WallHeader = ({onSearch}: {onSearch: (text: string) => void}) => {
           <DropdownMenu.Content
             onSelect={e => {
               console.log('Selected');
-
               console.log(e);
             }}>
             <DropdownMenu.Item key={'listview'} textValue="List View">
