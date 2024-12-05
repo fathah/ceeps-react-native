@@ -31,7 +31,7 @@ const ViewImage: FC<ViewImagePageProps> = ({ route }) => {
 
   const initialIndex = useMemo(
     () => images.findIndex(image => image.url === currentImage.url),
-    [images],
+    [images,currentImage],
   );
 
   const initialScrollIndex = useMemo(

@@ -1,5 +1,4 @@
 import {BottomTabNavigationOptions} from '@react-navigation/bottom-tabs';
-import {StackNavigationOptions} from '@react-navigation/stack';
 import {COLOR_THEME} from './colors';
 import {size} from './dimens';
 import {NativeStackNavigationOptions} from '@react-navigation/native-stack';

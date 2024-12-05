@@ -1,4 +1,4 @@
-import {View, Image, FlatList, TouchableOpacity, Button} from 'react-native';
+import {View, Image, FlatList, TouchableOpacity} from 'react-native';
 import {SafeAreaView} from 'react-native-safe-area-context';
 import WallHeader from './components/WallHeader';
 import {BottomTabScreenProps} from '@react-navigation/bottom-tabs';
@@ -94,15 +94,7 @@ const WallIndex: FC<WallPageProps> = ({navigation}): JSX.Element => {
 
   const bottomNavigation = (
     <View
-      style={{
-        flex: 1,
-        flexDirection: 'row',
-        justifyContent: 'space-around',
-        alignItems: 'center',
-        paddingHorizontal: 20,
-        paddingVertical: 20,
-        marginBottom: 100,
-      }}>
+      style={wallStyle.paginationNav}>
       {page > 1 && <AppButton text="<< Previous" onPress={prevPage} />}
       <AppButton text="Next >>" onPress={nextPage} />
     </View>

@@ -1,5 +1,4 @@
 import {NavigationContainer} from '@react-navigation/native';
-import {createStackNavigator} from '@react-navigation/stack';
 import {Screens} from '../types/screens';
 import ViewStory from '../screens/home/stories/ViewStory';
 import {StackParamList} from '@/types/routeParams';

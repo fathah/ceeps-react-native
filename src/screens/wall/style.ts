@@ -70,4 +70,18 @@ export const wallStyle = StyleSheet.create({
     justifyContent: 'center',
     alignItems: 'center',
   },
+  popMenu: {
+    position: 'absolute',
+    top: 10,
+    right: 10,
+  },
+  paginationNav: {
+    flex: 1,
+    flexDirection: 'row',
+    justifyContent: 'space-around',
+    alignItems: 'center',
+    paddingHorizontal: 20,
+    paddingVertical: 20,
+    marginBottom: 100,
+  },
 });

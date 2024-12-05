@@ -14,11 +14,7 @@ const WallHeader = ({onSearch}: {onSearch: (text: string) => void}) => {
       </View>
 
       <View
-        style={{
-          position: 'absolute',
-          top: 10,
-          right: 10,
-        }}>
+        style={wallStyle.popMenu}>
         <DropdownMenu.Root modal>
           <DropdownMenu.Trigger>
             <MaterialIcon icon="dots-vertical" color={colors.white} />

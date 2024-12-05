@@ -3,7 +3,6 @@ import { Modal, Pressable, StyleSheet, Text, View } from 'react-native';
 const Comments = ({ visible, onHide }: { visible: boolean, onHide: () => void }) => {
   
     return (
-    
             <Modal
           animationType="slide"
           visible={visible}

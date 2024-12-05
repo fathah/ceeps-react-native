@@ -18,8 +18,8 @@ export type HomePageProps = {
 
 const keyExtractor = (_: unknown, index: number) => index.toString();
 
-const Home: FC<HomePageProps> = ({navigation}) => {
-  const [refreshing, setRefreshing] = useState(false);
+const Home: FC<HomePageProps> = ({ navigation }) => {
+  
   const posts = useSelector((state: any) => state.posts);
 
   const renderItem = useCallback((item: any) => <SinglePost post={item} />, []);
@@ -31,16 +31,7 @@ const Home: FC<HomePageProps> = ({navigation}) => {
     </View>
   );
 
-  function handelRefresh() {
-    setRefreshing(true);
-    setTimeout(() => {
-      setRefreshing(false);
-      Toast.show({
-        type: 'success',
-        text1: 'Moments Refreshed',
-      });
-    }, 1000);
-  }
+
 
 
   return (

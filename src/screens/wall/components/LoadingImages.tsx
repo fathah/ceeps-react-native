@@ -1,6 +1,6 @@
 import {SCREEN_WIDTH} from '@/constants/dimens';
 import {useMemo} from 'react';
-import {FlatList, View} from 'react-native';
+import {FlatList, StyleSheet, View} from 'react-native';
 import ShimmerPlaceholder from 'react-native-shimmer-placeholder';
 
 const containerSize = SCREEN_WIDTH() / 2 - 20;
@@ -9,12 +9,7 @@ const LoadingImages = () => {
   const renderItem = (item: any) => (
     <View>
       <ShimmerPlaceholder
-        style={{
-          width: containerSize,
-          height: containerSize,
-          margin: 10,
-          borderRadius: 20,
-        }}
+        style={styles.placeholder}
       />
     </View>
   );
@@ -36,3 +31,12 @@ const LoadingImages = () => {
 };
 
 export default LoadingImages;
+
+const styles = StyleSheet.create({
+  placeholder:{
+    width: containerSize,
+    height: containerSize,
+    margin: 10,
+    borderRadius: 20,
+  }
+});

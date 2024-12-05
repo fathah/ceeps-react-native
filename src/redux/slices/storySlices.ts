@@ -1,4 +1,3 @@
-// src/features/stories/storiesSlice.js
 import {createSlice} from '@reduxjs/toolkit';
 
 const initialState = [

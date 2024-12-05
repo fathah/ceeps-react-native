@@ -9,8 +9,6 @@ import { FC } from "react";
 
 type WhisperPageProps = BottomTabScreenProps<TabParamList, Tabs.WHISPER>;
 
-
-
 const WhisperIndex: FC<WhisperPageProps> = (): JSX.Element =>{
     
     return (
